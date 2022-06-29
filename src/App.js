@@ -4,10 +4,10 @@ import {
   Routes,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Header from './modules/Header';
-import Missions from './modules/Missions';
-import Rockets from './modules/Rockets';
-import MyProfile from './modules/MyProfile';
+import Header from './components/Header';
+import Missions from './components/Missions';
+import Rockets from './components/Rockets';
+import MyProfile from './components/MyProfile';
 
 function App() {
   return (
