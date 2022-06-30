@@ -3,12 +3,10 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 
-import bookReducer from './books/Books';
-import categoriesReducer from './categories/Categories';
+import rocketsReducer from './Rockets/rocket';
 
 const rootReducer = combineReducers({
-  books: bookReducer,
-  categories: categoriesReducer,
+  rokets: rocketsReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

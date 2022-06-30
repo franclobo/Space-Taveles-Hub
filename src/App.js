@@ -8,10 +8,12 @@ import Header from './components/Header';
 import Missions from './components/Missions';
 import Rockets from './components/Rockets';
 import MyProfile from './components/MyProfile';
+import generateStore from './redux/configureStore';
 
 function App() {
+  const store = generateStore();
   return (
-    <Provider>
+    <Provider store={store}>
       <Header className="header" />
       <Routes>
         <Route

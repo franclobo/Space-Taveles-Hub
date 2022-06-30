@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 // Types
 const RESERVE_ROCKET = 'RESERVE_ROCKET';
-const ADDING_BOOK = 'ADDING_BOOK';
-const REMOVING_BOOK = 'REMOVING_BOOK';
+const CANCEL_ROCKET = 'CANCEL_ROCKET';
 
 // Initial state
 const initialState = [];
@@ -13,7 +12,7 @@ const initialState = [];
 
 export const loadBooks = () => async (dispatch) => {
   try {
-    const res = await axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/lbT5j970vaLoTzIT3rPx/books');
+    const res = await axios.get('#');
     if (res.status === 200) {
       const bookLoad = Object.keys(res.data).map((key) => ({
         item_id: key,
@@ -33,7 +32,7 @@ export const addBooks = (newBook) => async (dispatch) => {
     const res = await axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/lbT5j970vaLoTzIT3rPx/books', newBook);
     if (res.status === 201) {
       return dispatch({
-        type: ADDING_BOOK,
+        type: CANCEL_ROCKET,
         payload: { ...newBook, id: uuidv4() },
       });
     }
@@ -43,32 +42,14 @@ export const addBooks = (newBook) => async (dispatch) => {
     return msgError();
   }
 };
-export const removeBook = (id) => async (dispatch) => {
-  try {
-    const res = await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/lbT5j970vaLoTzIT3rPx/books/${id}`);
-    if (res.status === 201) {
-      return dispatch({
-        type: REMOVING_BOOK,
-        payload: { id },
-      });
-    }
-    throw new Error('Error removing book');
-  } catch (error) {
-    return 'Error removing books';
-  }
-};
 
 // Reducers
 export default function rocketReducer(state = initialState, action) {
   switch (action.type) {
     case RESERVE_ROCKET:
       return [...action.payload];
-    case ADDING_BOOK:
+    case CANCEL_ROCKET:
       return [...state.push(action.payload)];
-    case REMOVING_BOOK:
-      return [
-        ...state.filter((book) => book.item_id !== action.payload.id),
-      ];
     default:
       return state;
   }
