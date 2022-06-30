@@ -7,7 +7,7 @@ function MyProfile() {
         <h1>My Missions</h1>
       </div>
       <div className="rockets-container">
-        <h1>My Rockets</h1>
+        <h1>My Rocnkets</h1>
       </div>
     </>
   );
