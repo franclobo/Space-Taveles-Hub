@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+// Basic structure for missions.
 function Missions() {
   const [data, setData] = useState([]);
   useEffect(() => {
