@@ -1,32 +1,41 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function Missions() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios('https://api.spacexdata.com/v3/missions');
+      setData(res.data);
+    };
+    fetchData();
+  }, []);
+
   return (
-    <div className="mission-container">
-      <table className="table-mission">
+    <table className="mission-container">
+      <tr>
 
-        <tr>
+        <td><h1>Mision</h1></td>
 
-          <td>Celda 1</td>
+        <td><h1>Description</h1></td>
 
-          <td>Celda 2</td>
+        <td><h1>Status</h1></td>
 
-          <td>Celda 3</td>
+      </tr>
+      {
+        data.map((item) => (
+          <tr key={item.mission_id}>
 
-        </tr>
+            <td><h1>{item.mission_name}</h1></td>
 
-        <tr>
+            <td><p>{item.description}</p></td>
 
-          <td>Celda 4</td>
+            <td><button type="button">Reserve mission</button></td>
 
-          <td>Celda 5</td>
-
-          <td>Celda 6</td>
-
-        </tr>
-
-      </table>
-    </div>
+          </tr>
+        ))
+      }
+    </table>
   );
 }
 

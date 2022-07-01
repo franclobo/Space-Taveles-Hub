@@ -15,7 +15,7 @@ function Navbar() {
     },
     {
       id: 3,
-      path: '/profile',
+      path: '/myprofile',
       text: 'My Profile',
     },
   ];

@@ -1,39 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-function Rockets(props) {
-  const {
-    id, title, img, info,
-  } = props;
+function Rockets() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios('https://api.spacexdata.com/v3/rockets');
+      setData(res.data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="rocket-container">
-      <div>
-        <ul className="rocket-data">
-          <li className="rocket-img">{img}</li>
-          <li className="rocket-title">{title}</li>
-          <li className="rocket-info">{info}</li>
-        </ul>
-        <div className="button-rocket">
-          <button type="button" className="reserveBtn" Key={id}>Reserve Rocket</button>
-        </div>
-      </div>
+      {
+        data.map((item) => (
+          <div key={item.rocket_id}>
+            <h1>{item.rocket_name}</h1>
+            <img src={item.flickr_images[1]} alt="rocket" />
+            <p>{item.description}</p>
+            <button type="button">Reserve Rocket</button>
+          </div>
+        ))
+      }
     </div>
   );
 }
-
-Rockets.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
-  info: PropTypes.string,
-  img: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-};
-
-Rockets.defaultProps = {
-  id: '',
-  title: '',
-  info: '',
-  img: '',
-};
 
 export default Rockets;

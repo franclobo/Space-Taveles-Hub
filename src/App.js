@@ -25,7 +25,7 @@ function App() {
           element={<Missions />}
         />
         <Route
-          path="/profile"
+          path="/myprofile"
           element={<MyProfile />}
         />
       </Routes>
