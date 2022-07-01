@@ -1,55 +1,35 @@
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
 
 // Types
-const RESERVE_ROCKET = 'RESERVE_ROCKET';
-const CANCEL_ROCKET = 'CANCEL_ROCKET';
+const LOAD_ROCKETS = 'LOAD_ROCKETS';
 
 // Initial state
 const initialState = [];
 
 // Actions
 
-export const loadBooks = () => async (dispatch) => {
+export const loadRockets = () => async (dispatch) => {
   try {
-    const res = await axios.get('#');
+    const res = await axios.get('https://api.spacexdata.com/v3/rockets');
     if (res.status === 200) {
-      const bookLoad = Object.keys(res.data).map((key) => ({
-        item_id: key,
+      const rocketLoad = Object.keys(res.data).map((key) => ({
         ...res.data[key][0],
       }));
       dispatch({
-        type: RESERVE_ROCKET,
-        payload: bookLoad,
+        type: LOAD_ROCKETS,
+        payload: rocketLoad,
       });
-    } throw new Error('Error loading books');
+    } throw new Error('Error loading Rockets');
   } catch (error) {
-    return 'Error loadding books';
-  }
-};
-export const addBooks = (newBook) => async (dispatch) => {
-  try {
-    const res = await axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/lbT5j970vaLoTzIT3rPx/books', newBook);
-    if (res.status === 201) {
-      return dispatch({
-        type: CANCEL_ROCKET,
-        payload: { ...newBook, id: uuidv4() },
-      });
-    }
-    throw new Error('Error adding book');
-  } catch (error) {
-    const msgError = () => { 'Error adding books'; };
-    return msgError();
+    return 'Error loadding Rockets';
   }
 };
 
 // Reducers
 export default function rocketReducer(state = initialState, action) {
   switch (action.type) {
-    case RESERVE_ROCKET:
-      return [...action.payload];
-    case CANCEL_ROCKET:
-      return [...state.push(action.payload)];
+    case LOAD_ROCKETS:
+      return [action.payload];
     default:
       return state;
   }
