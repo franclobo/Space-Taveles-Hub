@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+// fetch rockets
 function Rockets() {
   const [data, setData] = useState([]);
   useEffect(() => {
