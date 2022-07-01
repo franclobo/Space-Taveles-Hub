@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <img src="../planet.png" alt="space logo" />
-      <h1>Space traveler`&apos;`s Hub</h1>
+      <h1>Space traveler&apos;s Hub</h1>
       <Navbar />
     </header>
   );
