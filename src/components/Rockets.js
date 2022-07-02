@@ -10,6 +10,9 @@ import {
 function Rockets() {
   const rocket = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadRockets());
+  }, []);
 
   const handleReserve = (id) => {
     dispatch(reserveRocket(id));
