@@ -4,11 +4,14 @@ import Navbar from './Navbar';
 
 function Header() {
   return (
-    <header>
-      <img src={logo} alt="space logo" />
-      <h1>Space travelers&apos; Hub</h1>
-      <Navbar />
-    </header>
+    <>
+      <header>
+        <img className="logo" src={logo} alt="space logo" />
+        <h1 className="title">Space travelers&apos; Hub</h1>
+        <Navbar className="navbar" />
+      </header>
+      <div className="line" />
+    </>
   );
 }
 
