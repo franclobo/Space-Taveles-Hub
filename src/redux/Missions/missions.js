@@ -27,7 +27,7 @@ export const loadMissions = () => async (dispatch) => {
 export default function missionsReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_MISSIONS:
-      return [state, action.payload];
+      return [...state, action.payload];
     default:
       return state;
   }
