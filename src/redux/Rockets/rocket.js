@@ -3,6 +3,7 @@ import axios from 'axios';
 // Types
 const LOAD_ROCKETS = 'LOAD_ROCKETS';
 const RESERVE_ROCKET = 'RESERVE_ROCKET';
+// Cancel Rocket
 const UNRESERVE_ROCKET = 'UNRESERVE_ROCKET';
 
 // Initial state
