@@ -2,6 +2,8 @@ import axios from 'axios';
 
 // Types
 const LOAD_ROCKETS = 'LOAD_ROCKETS';
+const RESERVE_ROCKET = 'RESERVE_ROCKET';
+const UNRESERVE_ROCKET = 'UNRESERVE_ROCKET';
 
 // Initial state
 const initialState = [];
@@ -24,11 +26,29 @@ export const loadRockets = () => async (dispatch) => {
   }
 };
 
+export const reserveRocket = (id) => ({
+  type: RESERVE_ROCKET,
+  payload: id,
+});
+
+export const unreserveRocket = (id) => ({
+  type: UNRESERVE_ROCKET,
+  payload: id,
+});
+
 // Reducers
 export default function rocketReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_ROCKETS:
       return [...state, action.payload];
+    case RESERVE_ROCKET:
+      return state.map((item) => (
+        item.id === action.payload ? { ...item, reserved: true } : item
+      ));
+    case UNRESERVE_ROCKET:
+      return state.map((item) => (
+        item.id === action.payload ? { ...item, reserved: false } : item
+      ));
     default:
       return state;
   }
