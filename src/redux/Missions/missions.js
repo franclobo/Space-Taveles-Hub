@@ -3,6 +3,7 @@ import axios from 'axios';
 // Types
 const LOAD_MISSIONS = 'LOAD_MISSIONS';
 const JOIN_MISSION = 'JOIN_MISSION';
+// Cancel Mission
 const LEAVE_MISSION = 'LEAVE_MISSION';
 
 // Initial state
