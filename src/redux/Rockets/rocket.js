@@ -9,19 +9,18 @@ const initialState = [];
 // Actions
 
 export const loadRockets = () => async (dispatch) => {
-  try {
-    const res = await axios.get('https://api.spacexdata.com/v3/rockets');
-    if (res.status === 200) {
-      const rocketLoad = Object.keys(res.data).map((key) => ({
-        ...res.data[key][0],
-      }));
-      dispatch({
-        type: LOAD_ROCKETS,
-        payload: rocketLoad,
-      });
-    } throw new Error('Error loading Rockets');
-  } catch (error) {
-    return 'Error loadding Rockets';
+  const res = await axios.get('https://api.spacexdata.com/v3/rockets');
+  for (let i = 0; i < res.data.length; i += 1) {
+    const rocket = res.data[i];
+    dispatch({
+      type: LOAD_ROCKETS,
+      payload: {
+        id: rocket.rocket_id,
+        name: rocket.rocket_name,
+        image: rocket.flickr_images,
+        description: rocket.description,
+      },
+    });
   }
 };
 
