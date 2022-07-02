@@ -1,41 +1,37 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadMissions } from '../redux/Missions/missions';
 
 // Fetch Missions.
 function Missions() {
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const mission = useSelector((state) => state.missions);
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios('https://api.spacexdata.com/v3/missions');
-      setData(res.data);
-    };
-    fetchData();
+    dispatch(loadMissions());
   }, []);
 
   return (
     <table className="mission-container">
-      <tr>
-
-        <td><h1>Mision</h1></td>
-
-        <td><h1>Description</h1></td>
-
-        <td><h1>Status</h1></td>
-
-      </tr>
-      {
-        data.map((item) => (
-          <tr key={item.mission_id}>
-
-            <td><h1>{item.mission_name}</h1></td>
-
-            <td><p>{item.description}</p></td>
-
-            <td><button type="button">Reserve mission</button></td>
-
-          </tr>
-        ))
-      }
+      <thead>
+        <tr>
+          <td><h1>Mision</h1></td>
+          <td><h1>Description</h1></td>
+          <td><h1>Status</h1></td>
+          <td />
+        </tr>
+      </thead>
+      <tbody>
+        {
+          mission.map((item) => (
+            <tr key={item.id}>
+              <td><h1>{item.name}</h1></td>
+              <td><p>{item.description}</p></td>
+              <td><button type="button">NOT A MEMBER</button></td>
+              <td><button type="button">Join Mission</button></td>
+            </tr>
+          ))
+        }
+      </tbody>
     </table>
   );
 }

@@ -4,9 +4,11 @@ import {
 import thunk from 'redux-thunk';
 
 import rocketsReducer from './Rockets/rocket';
+import missionsReducer from './Missions/missions';
 
 const rootReducer = combineReducers({
-  rokets: rocketsReducer,
+  rockets: rocketsReducer,
+  missions: missionsReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

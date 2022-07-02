@@ -1,24 +1,22 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadRockets } from '../redux/Rockets/rocket';
 
 // fetch rockets
 function Rockets() {
-  const [data, setData] = useState([]);
+  const rocket = useSelector((state) => state.rockets);
+  const dispatch = useDispatch();
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios('https://api.spacexdata.com/v3/rockets');
-      setData(res.data);
-    };
-    fetchData();
+    dispatch(loadRockets());
   }, []);
 
   return (
     <div className="rocket-container">
       {
-        data.map((item) => (
-          <div key={item.rocket_id}>
-            <h1>{item.rocket_name}</h1>
-            <img src={item.flickr_images[1]} alt="rocket" />
+        rocket.map((item) => (
+          <div key={item.id}>
+            <h1>{item.name}</h1>
+            <img src={item.image} alt="rocket" />
             <p>{item.description}</p>
             <button type="button">Reserve Rocket</button>
           </div>
