@@ -1,27 +1,141 @@
-body {
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.title {
+  padding: 0 50% 0  20px;
+}
+
+.navBar {
+  display: flex;
+  justify-self: end;
+  align-self: center;
+  padding: 0 20px;
+}
+
+.navbar {
+  justify-self: end;
+}
+
+.link {
+  padding: 0 10px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+
+.rocketContainer {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: start;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.picture {
+  width: 70%;
+  height: 70%;
+  align-self: center;
+  justify-self: center;
+}
+
+.rocket-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+}
+
+.rocketTitle {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  padding: 0;
+  margin: 0;
+}
+
+.msg {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00f;
+  padding: 0;
+  margin: 0;
+}
+
+/* Missions */
+
+.mission-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableHead {
+  display: grid;
+  grid-template-columns: repeat(4, 20% 40% 10% 10%);
+  align-items: center;
+  grid-gap: 10px;
+  border: solid 1px #000;
+}
+
+.tableBody {
+  display: grid;
+  grid-template-columns: repeat(4, 20% 40% 20% 20%);
+  align-items: center;
+  gap: 20px;
+  border: solid 1px #000;
+}
+
+.missionTitle {
+  width: 30%;
+  justify-content: center;
+  font-weight: bold;
+  color: #000;
+  padding: 10px;
+  margin: 10px;
+}
+
+.mission-description {
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.notMember {
+  justify-content: center;
+  margin: 10px;
+}
+
+.member {
+  justify-content: center;
+  margin: 10px;
+}
+
+.leave {
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.join {
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* My Profile */
+.myprofile {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
 }

@@ -26,15 +26,22 @@ function Rockets() {
     <div className="rocket-container">
       {
         rocket.map((item) => (
-          <div key={item.id}>
-            <h1>{item.name}</h1>
-            <img src={item.image} alt="rocket" />
-            <p>{item.description}</p>
-            { item.reserved ? (
-              <button type="button" onClick={() => handleUnreserve(item.id)}>Cancel Reservation</button>
-            ) : (
-              <button type="button" onClick={() => handleReserve(item.id)}>Reserve Rocket</button>
-            ) }
+          <div key={item.id} className="rocketContainer">
+            <img className="picture" src={item.image} alt="rocket" />
+            <div className="rocket-info">
+              <h1 className="rocketTitle">{item.name}</h1>
+
+              <p className="description">
+                {item.reserved && (<span className="msg">Reserved</span>)}
+                <span> </span>
+                {item.description}
+              </p>
+              { item.reserved ? (
+                <button className="cancelRocket" type="button" onClick={() => handleUnreserve(item.id)}>Cancel Reservation</button>
+              ) : (
+                <button className="reserveRocket" type="button" onClick={() => handleReserve(item.id)}>Reserve Rocket</button>
+              ) }
+            </div>
           </div>
         ))
       }
