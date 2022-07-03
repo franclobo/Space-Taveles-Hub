@@ -32,7 +32,7 @@ The My Profile section displays all reserved rockets and space missions.
 
 Clone this repository (you must have [Git Installed](git@github.com:franclobo/Space-Travelers-Hub.git))
 
-`git clone git@github.com:franclobo/Math-magicians.git`
+`git clone git@github.com:franclobo/Space-Travelers-Hub.git`
 
 To install dependencies run
 
@@ -42,7 +42,7 @@ Then you can start the server and preview the application using
 
 `npm start`
 
-## Authors
+## Author
 
 ## 👤 Francisco Borja
 
@@ -51,12 +51,6 @@ Then you can start the server and preview the application using
 - Twitter: [@pancho2788](https://twitter.com/Pancho2788)
 
 - LinkedIn: [Francisco Borja](https://www.linkedin.com/in/francisco-borja-lobato/)
-
-## 👤 Alamin Mustapha
-
-- GitHub: [@amklass11](https://github.com/amklass11)
-
-- LinkedIn: [Amk Lass](https://www.linkedin.com/in/amk-lass-521565196/)
 
 ## 🤝 Contributing
 
