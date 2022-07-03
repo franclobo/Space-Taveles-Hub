@@ -7,40 +7,40 @@ import Header from './Header';
 import Missions from './Missions';
 import Rockets from './Rockets';
 
-test ('Header renders correctly', () => {
+test('Header renders correctly', () => {
   const store = configureStore();
   const component = renderer.create(
     <Provider store={store}>
       <MemoryRouter>
         <Header />
       </MemoryRouter>
-    </Provider>
+    </Provider>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test ('Missions renders correctly', () => {
+test('Missions renders correctly', () => {
   const store = configureStore();
   const component = renderer.create(
     <Provider store={store}>
       <MemoryRouter>
         <Missions />
       </MemoryRouter>
-    </Provider>
+    </Provider>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test ('Rockets renders correctly', () => {
+test('Rockets renders correctly', () => {
   const store = configureStore();
   const component = renderer.create(
     <Provider store={store}>
       <MemoryRouter>
         <Rockets />
       </MemoryRouter>
-    </Provider>
+    </Provider>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
