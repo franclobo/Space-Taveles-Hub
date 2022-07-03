@@ -14,7 +14,7 @@ header {
   padding: 0 50% 0  20px;
 }
 
-.navBar{
+.navBar {
   display: flex;
   justify-self: end;
   align-self: center;
@@ -26,16 +26,16 @@ header {
 }
 
 .link {
-  padding: 0 10px
+  padding: 0 10px;
 }
 
-.line{
+.line {
   width: 100%;
   height: 1px;
   background-color: #000;
 }
 
-.rocketContainer{
+.rocketContainer {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: start;
@@ -69,7 +69,7 @@ header {
 .msg {
   font-size: 20px;
   font-weight: bold;
-  color: #0000ff;
+  color: #00f;
   padding: 0;
   margin: 0;
 }
@@ -77,8 +77,8 @@ header {
 /* Missions */
 
 .mission-container {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .tableHead {
@@ -136,6 +136,6 @@ flex-direction: column;
 
 /* My Profile */
 .myprofile {
-display: grid;
-grid-template-columns: repeat(2, auto);
+  display: grid;
+  grid-template-columns: repeat(2, auto);
 }
