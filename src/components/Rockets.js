@@ -32,6 +32,7 @@ function Rockets() {
               <h1 className="rocketTitle">{item.name}</h1>
 
               <p className="description">
+                {/* switch badgets for Rockets conditional components */}
                 {item.reserved && (<span className="msg">Reserved</span>)}
                 <span> </span>
                 {item.description}
