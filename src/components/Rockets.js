@@ -31,7 +31,11 @@ function Rockets() {
             <div className="rocket-info">
               <h1 className="rocketTitle">{item.name}</h1>
 
-              <p className="description">{item.description}</p>
+              <p className="description">
+                {item.reserved && (<span className="msg">Reserved</span>)}
+                <span> </span>
+                {item.description}
+              </p>
               { item.reserved ? (
                 <button className="cancelRocket" type="button" onClick={() => handleUnreserve(item.id)}>Cancel Reservation</button>
               ) : (
