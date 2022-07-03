@@ -10,7 +10,7 @@ function MyProfile() {
     <div className="myprofile">
       <div className="mission-myprofile">
         <h1>My Missions</h1>
-        {/* Display Missions.*/}
+        {/* Display Missions. */}
         <div>
           {missionList.map((item) => (
             <div className="mission-myprofile-item" key={item.id}>
@@ -21,7 +21,7 @@ function MyProfile() {
       </div>
       <div className="rockets-myprofile">
         <h1>My Rockets</h1>
-        {/* Display Rockets.*/}
+        {/* Display Rockets. */}
         <div>
           {rocketList.map((item) => (
             <div className="rockets-myprofile-item" key={item.id}>
