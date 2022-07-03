@@ -1,43 +1,39 @@
-import missionsReducer, { joinMission, loadMissions, leaveMission } from "./missions";
+import missionsReducer from './missions';
 
-describe("missionsReducer test", () => {
-  test ("initial state", () => {
+describe('missionsReducer test', () => {
+  test('initial state', () => {
     expect(missionsReducer(undefined, {})).toEqual([]);
-  }
-  );
-  test ("joinMission", () => {
+  });
+  test('joinMission', () => {
     expect(missionsReducer([{
-      id: "M1",
-      name: "Mission 1",
-      description: "Description 1",
+      id: 'M1',
+      name: 'Mission 1',
+      description: 'Description 1',
       joined: false,
     }], {
-      type: "JOIN_MISSION",
-      payload: "M1",
+      type: 'JOIN_MISSION',
+      payload: 'M1',
     })).toEqual([{
-      id: "M1",
-      name: "Mission 1",
-      description: "Description 1",
+      id: 'M1',
+      name: 'Mission 1',
+      description: 'Description 1',
       joined: true,
     }]);
-  }
-  );
-  test ("leaveMission", () => {
+  });
+  test('leaveMission', () => {
     expect(missionsReducer([{
-      id: "M1",
-      name: "Mission 1",
-      description: "Description 1",
+      id: 'M1',
+      name: 'Mission 1',
+      description: 'Description 1',
       joined: true,
     }], {
-      type: "LEAVE_MISSION",
-      payload: "M1",
+      type: 'LEAVE_MISSION',
+      payload: 'M1',
     })).toEqual([{
-      id: "M1",
-      name: "Mission 1",
-      description: "Description 1",
+      id: 'M1',
+      name: 'Mission 1',
+      description: 'Description 1',
       joined: false,
     }]);
-  }
-  );
-}
-);
+  });
+});
