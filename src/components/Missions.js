@@ -19,31 +19,31 @@ function Missions() {
   return (
     <table className="mission-container">
       <thead>
-        <tr>
-          <td><h1>Mision</h1></td>
-          <td><h1>Description</h1></td>
-          <td><h1>Status</h1></td>
+        <tr className="tableHead">
+          <td className="missionTitle"><h1>Mision</h1></td>
+          <td className="mission-description"><h1>Description</h1></td>
+          <td className="missionStatus"><h1 className="status">Status</h1></td>
           <td />
         </tr>
       </thead>
       <tbody>
         {
           mission.map((item) => (
-            <tr key={item.id}>
-              <td><h1>{item.name}</h1></td>
-              <td><p>{item.description}</p></td>
-              <td>
+            <tr className="tableBody" key={item.id}>
+              <td className="missionTitle"><h1>{item.name}</h1></td>
+              <td className="mission-description"><p>{item.description}</p></td>
+              <td className="missionStatus">
                 { item.joined ? (
-                  <button type="button" onClick={() => handleLeave(item.id)}>NOT A MEMBER</button>
+                  <button className="notMember" type="button" onClick={() => handleLeave(item.id)} disabled>Active Member</button>
                 ) : (
-                  <button type="button" onClick={() => handleJoin(item.id)}>Active Member</button>
+                  <button className="member" type="button" onClick={() => handleJoin(item.id)} disabled>NOT A MEMBER</button>
                 ) }
               </td>
               <td>
                 { item.joined ? (
-                  <button type="button" onClick={() => handleLeave(item.id)}>Leave Mission</button>
+                  <button className="leave" type="button" onClick={() => handleLeave(item.id)}>Leave Mission</button>
                 ) : (
-                  <button type="button" onClick={() => handleJoin(item.id)}>Join Mission</button>
+                  <button className="join" type="button" onClick={() => handleJoin(item.id)}>Join Mission</button>
                 ) }
               </td>
             </tr>
