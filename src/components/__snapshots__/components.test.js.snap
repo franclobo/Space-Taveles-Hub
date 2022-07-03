@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+Array [
+  <header>
+    <img
+      alt="space logo"
+      className="logo"
+      src="planet.png"
+    />
+    <h1
+      className="title"
+    >
+      Space travelers' Hub
+    </h1>
+    <nav
+      className="navBar"
+    >
+      <a
+        aria-current="page"
+        className="link active"
+        href="/"
+        onClick={[Function]}
+      >
+        Rockets
+      </a>
+      <a
+        className="link"
+        href="/missions"
+        onClick={[Function]}
+      >
+        Missions
+      </a>
+      <a
+        className="link"
+        href="/myprofile"
+        onClick={[Function]}
+      >
+        My Profile
+      </a>
+    </nav>
+  </header>,
+  <div
+    className="line"
+  />,
+]
+`;
+
+exports[`Missions renders correctly 1`] = `
+<table
+  className="mission-container"
+>
+  <thead>
+    <tr
+      className="tableHead"
+    >
+      <td
+        className="missionTitle"
+      >
+        <h1>
+          Mision
+        </h1>
+      </td>
+      <td
+        className="mission-description"
+      >
+        <h1>
+          Description
+        </h1>
+      </td>
+      <td
+        className="missionStatus"
+      >
+        <h1
+          className="status"
+        >
+          Status
+        </h1>
+      </td>
+      <td />
+    </tr>
+  </thead>
+  <tbody />
+</table>
+`;
+
+exports[`Rockets renders correctly 1`] = `
+<div
+  className="rocket-container"
+/>
+`;
