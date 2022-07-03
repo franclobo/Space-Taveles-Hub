@@ -34,9 +34,9 @@ function Missions() {
               <td className="mission-description"><p>{item.description}</p></td>
               <td className="missionStatus">
                 { item.joined ? (
-                  <button className="notMember" type="button" onClick={() => handleLeave(item.id)} disabled>Active Member</button>
+                  <button className="member" type="button" onClick={() => handleLeave(item.id)} disabled>Active Member</button>
                 ) : (
-                  <button className="member" type="button" onClick={() => handleJoin(item.id)} disabled>NOT A MEMBER</button>
+                  <button className="notMember" type="button" onClick={() => handleJoin(item.id)} disabled>NOT A MEMBER</button>
                 ) }
               </td>
               <td>
