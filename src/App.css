@@ -1,0 +1,58 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header img {
+  width: auto;
+  height: 2.5rem;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+
+.navBar {
+  display: flex;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.linkActive {
+  color: #00f;
+  text-decoration: underline;
+}
+
+.link {
+  color: #00f;
+  text-decoration: none;
+}
+
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  margin: 1rem;
+}
+
+.rockets-myprofile-item,
+.mission-myprofile-item,
+.dragons-myprofile-item {
+  border: solid 1px #e0e0e0;
+  padding: 15px;
+}
+
+.rocket-myprofile,
+.mission-myprofile,
+.dragons-myprofile {
+  margin: 10px;
+}

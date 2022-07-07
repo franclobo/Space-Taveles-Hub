@@ -12,7 +12,7 @@ In this task, we worked with the real live data from the SpaceX API. Our task is
 
 The Space Travelers' Hub consists of Rockets, Missions, and the My Profile section.
 
-# Rockets
+# Rockets/Dragons
 
 The Rockets section displays a list of all available SpaceX rockets. Users can book each rocket by clicking the reservation button or cancel the previously made booking.
 
@@ -28,11 +28,20 @@ The My Profile section displays all reserved rockets and space missions.
 
 [Space Travelers Hub](#)<br>
 
+![image](https://user-images.githubusercontent.com/58642949/177840971-87dec59e-b55f-4bee-96ce-4abdbf1baeed.png)
+<br>
+![image](https://user-images.githubusercontent.com/58642949/177841080-982a3ef8-4108-4961-9de0-66f70db0ff27.png)
+<br>
+![image](https://user-images.githubusercontent.com/58642949/177841227-3de9e376-8cd9-4b4a-a1c4-035baec3737d.png)
+<br>
+![image](https://user-images.githubusercontent.com/58642949/177841303-0482af56-93be-4283-9737-86066583c38c.png)
+<br>
+
 ## Installation
 
-Clone this repository (you must have [Git Installed](git@github.com:franclobo/Space-Travelers-Hub.git))
+Clone this repository (you must have [Git Installed](git@github.com:Yilikal250/Space-Travelers-Hub22.git))
 
-`git clone git@github.com:franclobo/Space-Travelers-Hub.git`
+`git clone git@github.com:Yilikal250/Space-Travelers-Hub22.git`
 
 To install dependencies run
 
@@ -42,7 +51,23 @@ Then you can start the server and preview the application using
 
 `npm start`
 
-## Author
+## Authors
+
+## 👤 **Yilikal Teshome**
+
+- GitHub: [@Yilikal250](https://github.com/githubhandle)
+
+- Twitter: [@@TeshomeYilikal](https://twitter.com/twitterhandle)
+
+- LinkedIn: [teshomeyilikal250@gmail.com](https://linkedin.com/in/linkedinhandle)
+
+## 👤 **Marco Antonio Hincapié Montes**
+
+- GitHub: [@AntonioHincapie](https://github.com/AntonioHincapie)
+
+- Twitter: [@MarcoHincapie](https://twitter.com/MarcoHincapie)
+
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/marco-hincapi%C3%A9-7a76751a3/)
 
 ## 👤 Francisco Borja
 
@@ -65,6 +90,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse curriculum.
+- My code partners.
 - My code reviewers.
 
 ## 📝 License

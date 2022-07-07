@@ -1,22 +1,16 @@
-import {
-  legacy_createStore as createStore, combineReducers, compose, applyMiddleware,
-} from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import MissionsReducer from './Missions/Missions';
+import dragonsReducer from './Dragons/dragons';
+import RocketsReducer from './Rockets/Rockets';
 
-import rocketsReducer from './Rockets/rocket';
-import missionsReducer from './Missions/missions';
-
-const rootReducer = combineReducers({
-  rockets: rocketsReducer,
-  missions: missionsReducer,
+const RootReducer = combineReducers({
+  rockets: RocketsReducer,
+  missions: MissionsReducer,
+  dragons: dragonsReducer,
 });
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(RootReducer, applyMiddleware(thunk, logger));
 
-function generateStore() {
-  const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk, logger)));
-  return store;
-}
-
-export default generateStore;
+export default store;

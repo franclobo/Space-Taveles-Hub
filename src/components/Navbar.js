@@ -1,32 +1,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../planet.png';
 
-function Navbar() {
-  const links = [
-    {
-      id: 1,
-      path: '/',
-      text: 'Rockets',
-    },
-    {
-      id: 2,
-      path: '/missions',
-      text: 'Missions',
-    },
-    {
-      id: 3,
-      path: '/myprofile',
-      text: 'My Profile',
-    },
-  ];
+export default function NavBar() {
   return (
-    <nav className="navBar">
-      {links.map((link) => (
-        <NavLink key={link.id} className="link" to={link.path}>
-          {link.text}
-        </NavLink>
-      ))}
-    </nav>
+    <>
+      <header className="navigation">
+        <div className="header">
+          <img src={logo} alt="logo" />
+          <h1>Space Travelers&apos; Hub</h1>
+        </div>
+        <nav className="navBar">
+          <NavLink className={({ isActive }) => (isActive ? 'linkActive' : 'link')} to="/">Rockets</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? 'linkActive' : 'link')} to="/missions">Missions</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? 'linkActive' : 'link')} to="/dragons">Dragons</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? 'linkActive' : 'link')} to="/myprofile">MyProfile</NavLink>
+        </nav>
+      </header>
+      <div className="line" />
+    </>
   );
 }
-export default Navbar;

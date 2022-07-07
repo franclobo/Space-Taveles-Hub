@@ -1,51 +1,16 @@
-import axios from 'axios';
-
-// Types
-const LOAD_MISSIONS = 'LOAD_MISSIONS';
-const JOIN_MISSION = 'JOIN_MISSION';
-// Cancel Mission
-const LEAVE_MISSION = 'LEAVE_MISSION';
-
-// Initial state
-const initialState = [];
-
-// Actions
-
-export const loadMissions = () => async (dispatch) => {
-  const res = await axios.get('https://api.spacexdata.com/v3/missions');
-  for (let i = 0; i < res.data.length; i += 1) {
-    const mission = res.data[i];
-    dispatch({
-      type: LOAD_MISSIONS,
-      payload: {
-        id: mission.mission_id,
-        name: mission.mission_name,
-        description: mission.description,
-      },
-    });
-  }
-};
-
-export const joinMission = (id) => ({
-  type: JOIN_MISSION,
-  payload: id,
-});
-
-export const leaveMission = (id) => ({
-  type: LEAVE_MISSION,
-  payload: id,
-});
-
-// Reducers
-export default function missionsReducer(state = initialState, action) {
+const url = 'https://api.spacexdata.com/v3/missions';
+const GETMISSION = 'Space-Travelers-Hub22/Missions/GETMISSION';
+const JOINMISSION = 'Space-Travelers-Hub22/Missions/JOINMISSION';
+const LEAVEMISSION = 'Space-Travelers-Hub22/Missions/LEAVEMISSION';
+function MissionsReducer(state = [], action) {
   switch (action.type) {
-    case LOAD_MISSIONS:
-      return [...state, action.payload];
-    case JOIN_MISSION:
+    case GETMISSION:
+      return [...action.missions];
+    case JOINMISSION:
       return state.map((item) => (
         item.id === action.payload ? { ...item, joined: true } : item
       ));
-    case LEAVE_MISSION:
+    case LEAVEMISSION:
       return state.map((item) => (
         item.id === action.payload ? { ...item, joined: false } : item
       ));
@@ -53,3 +18,42 @@ export default function missionsReducer(state = initialState, action) {
       return state;
   }
 }
+
+const GetMission = (missions) => ({
+  type: GETMISSION,
+  missions,
+});
+
+export const joinMission = (id) => ({
+  type: JOINMISSION,
+  payload: id,
+});
+
+export const leaveMission = (id) => ({
+  type: LEAVEMISSION,
+  payload: id,
+});
+
+export const FetchMission = () => (dispatch) => {
+  const List = [];
+  fetch(url, {
+    headers: {
+      'Content-Type': 'application/json',
+      accept: 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      const Data = Object.entries(result);
+      Data.forEach((element) => {
+        List.push({
+          id: element[1].mission_id,
+          name: element[1].mission_name,
+          description: element[1].description,
+        });
+      });
+      dispatch(GetMission(List));
+    });
+};
+
+export default MissionsReducer;

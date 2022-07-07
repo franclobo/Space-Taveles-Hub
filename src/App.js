@@ -1,35 +1,22 @@
-import React from 'react';
-import {
-  Route,
-  Routes,
-} from 'react-router-dom';
-import { Provider } from 'react-redux';
-import Header from './components/Header';
-import Missions from './components/Missions';
-import Rockets from './components/Rockets';
-import MyProfile from './components/MyProfile';
-import generateStore from './redux/configureStore';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import MyProfile from './components/MyProfile/MyProfile';
+import Missions from './components/Missions/Missions';
+import Rockets from './components/Rockets/Rockets';
+import Dragons from './components/Dragons/Dragons';
+import NavBar from './components/navbar';
 
 function App() {
-  const store = generateStore();
   return (
-    <Provider store={store}>
-      <Header className="header" />
+    <div>
+      <NavBar />
       <Routes>
-        <Route
-          path="/"
-          element={<Rockets />}
-        />
-        <Route
-          path="/missions"
-          element={<Missions />}
-        />
-        <Route
-          path="/myprofile"
-          element={<MyProfile />}
-        />
+        <Route path="/" element={<Rockets />} />
+        <Route path="/missions" element={<Missions />} />
+        <Route path="/dragons" element={<Dragons />} />
+        <Route path="/myprofile" element={<MyProfile />} />
       </Routes>
-    </Provider>
+    </div>
   );
 }
 

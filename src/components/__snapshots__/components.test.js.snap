@@ -1,42 +1,100 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders correctly 1`] = `
+exports[`Components Test Dragons Render 1`] = `
+<div>
+  <ul
+    className="dragons"
+  />
+</div>
+`;
+
+exports[`Components Test Missions Render 1`] = `
+<div>
+  <table
+    className="mission-container"
+  >
+    <thead>
+      <tr
+        className="tableHead"
+      >
+        <td
+          className="missionTitle"
+        >
+          <h1>
+            Mision
+          </h1>
+        </td>
+        <td
+          className="mission-description"
+        >
+          <h1>
+            Description
+          </h1>
+        </td>
+        <td
+          className="missionStatus"
+        >
+          <h1
+            className="status"
+          >
+            Status
+          </h1>
+        </td>
+        <td />
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
+
+exports[`Components Test NavBar Render 1`] = `
 Array [
-  <header>
-    <img
-      alt="space logo"
-      className="logo"
-      src="planet.png"
-    />
-    <h1
-      className="title"
+  <header
+    className="navigation"
+  >
+    <div
+      className="header"
     >
-      Space travelers' Hub
-    </h1>
+      <img
+        alt="logo"
+        src="planet.png"
+      />
+      <h1>
+        Space Travelers' Hub
+      </h1>
+    </div>
     <nav
       className="navBar"
     >
       <a
         aria-current="page"
-        className="link active"
+        className="active"
         href="/"
         onClick={[Function]}
       >
         Rockets
       </a>
       <a
-        className="link"
+        className=""
         href="/missions"
         onClick={[Function]}
       >
         Missions
       </a>
       <a
-        className="link"
+        className=""
+        href="/dragons"
+        onClick={[Function]}
+      >
+        Dragons
+      </a>
+      <a
+        className=""
         href="/myprofile"
         onClick={[Function]}
       >
-        My Profile
+        MyProfile
       </a>
     </nav>
   </header>,
@@ -46,46 +104,10 @@ Array [
 ]
 `;
 
-exports[`Missions renders correctly 1`] = `
-<table
-  className="mission-container"
->
-  <thead>
-    <tr
-      className="tableHead"
-    >
-      <td
-        className="missionTitle"
-      >
-        <h1>
-          Mision
-        </h1>
-      </td>
-      <td
-        className="mission-description"
-      >
-        <h1>
-          Description
-        </h1>
-      </td>
-      <td
-        className="missionStatus"
-      >
-        <h1
-          className="status"
-        >
-          Status
-        </h1>
-      </td>
-      <td />
-    </tr>
-  </thead>
-  <tbody />
-</table>
-`;
-
-exports[`Rockets renders correctly 1`] = `
-<div
-  className="rocket-container"
-/>
+exports[`Components Test Rockets Render 1`] = `
+<div>
+  <ul
+    className="rockets"
+  />
+</div>
 `;

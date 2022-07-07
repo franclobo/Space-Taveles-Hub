@@ -1,41 +1,39 @@
-import rocketReducer from './rocket';
+import RocketsReducer from './Rockets';
 
-describe('rocketReducer test', () => {
-  test('initial state', () => {
-    expect(rocketReducer(undefined, {})).toEqual([]);
-  });
-  test('reserveRocket', () => {
-    expect(rocketReducer([{
+describe('Dragons Reducer Test', () => {
+  test('Reserved dragon', () => {
+    expect(RocketsReducer([{
       id: 'R1',
       name: 'Rocket 1',
-      description: 'Description 1',
-      joined: false,
+      description: 'Description',
+      img: 'img1',
+      reserved: true,
     }], {
-      type: 'RESERVE_ROCKET',
-      payload: 'R1',
+      type: 'RESERVEROCKET',
+      rocketReserved: 'R1',
     })).toEqual([{
       id: 'R1',
       name: 'Rocket 1',
-      description: 'Description 1',
-      joined: false,
+      description: 'Description',
+      img: 'img1',
       reserved: true,
     }]);
   });
-  test('unreserveRocket', () => {
-    expect(rocketReducer([{
+  test('Unreserved dragon', () => {
+    expect(RocketsReducer([{
       id: 'R1',
       name: 'Rocket 1',
-      description: 'Description 1',
-      joined: false,
-      reserved: true,
+      description: 'Description',
+      img: 'img1',
+      reserved: false,
     }], {
-      type: 'UNRESERVE_ROCKET',
-      payload: 'R1',
+      type: 'CANCELRESERVE',
+      rocketCanceled: 'R1',
     })).toEqual([{
       id: 'R1',
       name: 'Rocket 1',
-      description: 'Description 1',
-      joined: false,
+      description: 'Description',
+      img: 'img1',
       reserved: false,
     }]);
   });

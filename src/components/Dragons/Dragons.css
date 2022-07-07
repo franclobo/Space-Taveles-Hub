@@ -1,0 +1,50 @@
+.dragons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dragon-info {
+  display: flex;
+  gap: 1rem;
+}
+
+.dragon-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: start;
+  align-items: center;
+}
+
+.imgDragon {
+  height: 200px;
+  width: 265px;
+  margin: 1em;
+}
+
+.dragon-name {
+  margin: 1em;
+}
+
+.dragon-container > button {
+  position: relative;
+  left: -135px;
+}
+
+.cancelDragon {
+  background-color: azure;
+  color: darkgrey;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: 2px slategray solid;
+}
+
+.reserveDragon {
+  background-color: blue;
+  color: azure;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: none;
+}

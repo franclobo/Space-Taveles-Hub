@@ -1,47 +1,59 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import configureStore from '../redux/configureStore';
-import Header from './Header';
-import Missions from './Missions';
-import Rockets from './Rockets';
+import configureStore from '../Redux/configureStore';
+import NavBar from './navbar';
+import Rockets from './Rockets/Rockets';
+import Missions from './Missions/Missions';
+import Dragons from './Dragons/Dragons';
 
-test('Header renders correctly', () => {
-  const store = configureStore();
-  const component = renderer.create(
-    <Provider store={store}>
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
-    </Provider>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Missions renders correctly', () => {
-  const store = configureStore();
-  const component = renderer.create(
-    <Provider store={store}>
-      <MemoryRouter>
-        <Missions />
-      </MemoryRouter>
-    </Provider>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Rockets renders correctly', () => {
-  const store = configureStore();
-  const component = renderer.create(
-    <Provider store={store}>
-      <MemoryRouter>
-        <Rockets />
-      </MemoryRouter>
-    </Provider>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+describe('Components Test', () => {
+  test('NavBar Render', () => {
+    const store = configureStore;
+    const component = renderer.create(
+      <Provider store={store}>
+        <MemoryRouter>
+          <NavBar />
+        </MemoryRouter>
+      </Provider>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('Rockets Render', () => {
+    const store = configureStore;
+    const component = renderer.create(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Rockets />
+        </MemoryRouter>
+      </Provider>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('Missions Render', () => {
+    const store = configureStore;
+    const component = renderer.create(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Missions />
+        </MemoryRouter>
+      </Provider>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('Dragons Render', () => {
+    const store = configureStore;
+    const component = renderer.create(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Dragons />
+        </MemoryRouter>
+      </Provider>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
