@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { Fetchdragon, reserveDragon, unreserveDragon } from '../../Redux/Dragons/dragons';
+import { Fetchdragon, reserveDragon, unreserveDragon } from '../../redux/Dragons/dragons';
 import Dragon from './Dragon';
 
 export default function Dragons() {

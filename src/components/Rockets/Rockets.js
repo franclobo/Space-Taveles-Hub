@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { FetchRocket } from '../../Redux/Rockets/Rockets';
+import { FetchRocket } from '../../redux/Rockets/Rockets';
 import './Rockets.css';
 import Rocket from './rocket';
 

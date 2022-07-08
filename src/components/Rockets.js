@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   reserveRocket,
   unreserveRocket,
-} from '../redux/Rockets/rocket';
+} from '../redux/Rockets/Rockets';
 
 // fetch rockets
 function Rockets() {

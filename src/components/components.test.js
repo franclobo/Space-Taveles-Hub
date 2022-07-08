@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import configureStore from '../Redux/configureStore';
+import configureStore from '../redux/configureStore';
 import NavBar from './navbar';
 import Rockets from './Rockets/Rockets';
 import Missions from './Missions/Missions';

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { CancelReserve, ReserveRocket } from '../../Redux/Rockets/Rockets';
+import { CancelReserve, ReserveRocket } from '../../redux/Rockets/Rockets';
 
 function Rocket(props) {
   const {

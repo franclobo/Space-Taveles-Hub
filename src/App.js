@@ -4,7 +4,7 @@ import MyProfile from './components/MyProfile/MyProfile';
 import Missions from './components/Missions/Missions';
 import Rockets from './components/Rockets/Rockets';
 import Dragons from './components/Dragons/Dragons';
-import NavBar from './components/navbar';
+import NavBar from './components/Navbar';
 
 function App() {
   return (

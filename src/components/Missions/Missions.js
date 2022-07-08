@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { FetchMission, joinMission, leaveMission } from '../../Redux/Missions/Missions';
+import { FetchMission, joinMission, leaveMission } from '../../redux/Missions/missions';
 import './Missions.css';
 
 export default function Missions() {
