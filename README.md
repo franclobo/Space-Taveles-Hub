@@ -26,7 +26,7 @@ The My Profile section displays all reserved rockets and space missions.
 
 ## Live Demo
 
-[Space Travelers Hub](#)<br>
+[Space Travelers Hub](https://react-redux-space-travelers-hub.netlify.app/)<br>
 
 ![image](https://user-images.githubusercontent.com/58642949/177840971-87dec59e-b55f-4bee-96ce-4abdbf1baeed.png)
 <br>
